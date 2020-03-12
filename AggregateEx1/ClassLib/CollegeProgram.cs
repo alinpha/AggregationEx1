@@ -16,12 +16,12 @@ namespace ClassLib
             get { return name; }
             set
             {
-                if (String.IsNullOrEmpty(value))
+                if (!Validate.ValidNotEmpty(value))
                 {
                     throw new ArgumentException("Name is required.");
                 }
 
-                if (value.Length > 20)
+                if (!Validate.ValidLessThanLength(value, 21))
                 {
                     throw new ArgumentException("Name must be no longer than 20 characters.");
                 }

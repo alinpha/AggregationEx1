@@ -8,6 +8,14 @@ namespace ClassLib
 {
     public static class Validate
     {
+        public static bool ValidLessThanLength(string value, int length)
+        {
+            return value.Length < length;
+        }
 
+        public static bool ValidNotEmpty(string value)
+        {
+            return !String.IsNullOrEmpty(value);
+        }
     }
 }
